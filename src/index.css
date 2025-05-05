@@ -1,0 +1,56 @@
+@import "tailwindcss";
+/* in App.css or index.css */
+body {
+    font-family: 'Roboto', sans-serif;
+  }
+  @media (max-width: 768px) {
+    .desktop-links {
+      display: none;
+    }
+    .hamburger {
+      display: block;
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .hamburger {
+      display: none;
+    }
+  }
+
+  .ticker-wrapper {
+    width: 100%;
+    overflow: hidden;
+    background: #1f2937;
+    color: white;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .ticker {
+    display: flex;
+    align-items: center;
+  }
+  
+  .ticker-move {
+    display: flex;
+    animation: scroll-left 20s linear infinite;
+  }
+  
+  .ticker-move span {
+    display: inline-block;
+    margin-right: 3rem;
+    font-size: 1.125rem;
+    white-space: nowrap;
+  }
+  
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
