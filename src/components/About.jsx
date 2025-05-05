@@ -117,7 +117,7 @@ function About() {
             {/* Owner 1 */}
             <div className="bg-gray-100 p-6 rounded-xl shadow-md">
               <img
-                src="/owner-R.png" // Replace with actual image path
+                src="/owner-1(2).jpg" // Replace with actual image path
                 alt="Owner 1"
                 className="w-45 h-50 object-fit rounded-full mb-4 mx-auto shadow-md"
               />
