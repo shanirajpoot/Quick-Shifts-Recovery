@@ -112,7 +112,7 @@ function Home() {
               "/truck-4.jpg",
               "/truck-5.jpg",
               "/truck-6.jpg",
-              "/truck-7.jpg",
+              "/desert-recovery.jpg",
               "/truck-8.jpg",
             ].map((src, idx) => (
               <motion.div
