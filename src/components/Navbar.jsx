@@ -14,13 +14,17 @@ function Navbar() {
       {/* Desktop Header (visible on md and above) */}
       <nav className="hidden md:flex bg-[#6E7172] px-4 py-2 justify-between items-center sticky top-0 z-50">
         <div className="flex items-center text-white text-2xl font-bold">
-          <img src="/LOGO-RN.png" alt="Logo" className="w-15 h-10 mr-2" />
-          <div className="nav-info leading-0">
-            <p className="md:text-xl text-sm">
-              <span className="text-[#00A9E2]">QUICK SHIFT </span> RECOVERY
-            </p>
-            <span className="text-xs">SERVICES AND GENERAL TRANSPORT-LLC</span>
-          </div>
+          <Link to="/" className="flex items-center">
+            <img src="/LOGO-RN.png" alt="Logo" className="w-15 h-10 mr-2" />
+            <div className="nav-info leading-0">
+              <p className="md:text-xl text-sm">
+                <span className="text-[#00A9E2]">QUICK SHIFT </span> RECOVERY
+              </p>
+              <span className="text-xs">
+                SERVICES AND GENERAL TRANSPORT-LLC
+              </span>
+            </div>
+          </Link>
         </div>
 
         <div className="flex space-x-4">
