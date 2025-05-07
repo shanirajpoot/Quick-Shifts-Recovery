@@ -14,7 +14,7 @@ function Home() {
       <div className="relative w-full md:h-screen h-[650px] overflow-hidden">
         {/* Background Image */}
         <img
-          src="/home-main-bg.jpg"
+          src="/main-home-bg.png"
           alt="Vehicle Recovery Hero"
           className="w-full h-full object-cover saturate-50"
         />

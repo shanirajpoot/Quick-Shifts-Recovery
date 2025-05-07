@@ -42,7 +42,7 @@ function Contact() {
                 </a>
 
                 <a
-                  href="tel:+971557242010"
+                  href="tel:+971557241010"
                   className="font-semibold text-black flex items-center gap-2 hover:underline"
                 >
                   <FaPhoneAlt className="text-orange-500" /> +971557241010
