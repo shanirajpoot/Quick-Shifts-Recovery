@@ -57,7 +57,7 @@ function About() {
             <img
               src="/About-image.jpg"
               alt="About Us"
-              className="w-full h-auto rounded-lg shadow-lg"
+              className="w-600 h-120 rounded-lg shadow-lg"
             />
           </div>
         </div>
@@ -124,7 +124,7 @@ function About() {
             <img
               src="/owner-1(2).jpg"
               alt="AMIR HAYAT"
-              className="w-40 h-40 object-cover rounded-full mb-4 mx-auto shadow"
+              className="w-40 h-40 object-fit rounded-full mb-4 mx-auto shadow"
             />
             <h3 className="text-2xl font-semibold text-orange-500">
               AMIR HAYAT
@@ -157,7 +157,7 @@ function About() {
             <img
               src="/owner2.jpg"
               alt="ASMAT IJAZ"
-              className="w-40 h-40 object-cover rounded-full mb-4 mx-auto shadow"
+              className="w-40 h-40 object-fit rounded-full mb-4 mx-auto shadow"
             />
             <h3 className="text-2xl font-semibold text-orange-500">
               ASMAT IJAZ
