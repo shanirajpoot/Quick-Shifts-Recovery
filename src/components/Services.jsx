@@ -4,20 +4,29 @@ import { FaWhatsapp } from "react-icons/fa";
 
 const ServiceCard = ({ title, description, image }) => {
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center transition-transform duration-300 ease-out hover:scale-105 hover:shadow-lg">
-      <div className="w-28 h-24  mb-4 ">
-        <img src={image} alt={title} className="w-full h-full object-fit" />
+    <article
+      className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center transition-transform duration-300 ease-out hover:scale-105 hover:shadow-lg"
+      aria-label={`Service: ${title}`}
+    >
+      <div className="w-28 h-24 mb-4">
+        <img
+          src={image}
+          alt={`${title} icon`}
+          className="w-full h-full object-contain"
+        />
       </div>
 
-      <h3 className="text-xl font-semibold text-gray-800 mb-2">{title}</h3>
+      <h2 className="text-xl font-semibold text-gray-800 mb-2">{title}</h2>
       <p className="text-gray-600 text-sm mb-4">{description}</p>
-      <Link
-        to="tel:+971551997029"
+
+      <a
+        href="tel:+971551997029"
         className="mt-auto bg-white text-black hover:bg-orange-500 hover:text-white border-2 border-orange-500 px-3 py-2 rounded-md"
+        aria-label={`Call now for ${title}`}
       >
         Call Now
-      </Link>
-    </div>
+      </a>
+    </article>
   );
 };
 
@@ -26,77 +35,84 @@ const ServiceCards = () => {
     {
       title: "TOWING SERVICE",
       description:
-        "Your Vehicle Broken Down In The Middle Of Road ? Need Car Towing ? Car Recovery Now Services will be on the way.",
+        "Your vehicle broken down on the road? Our towing service is ready to help you 24/7.",
       image: "/car-towing.png",
     },
     {
       title: "JUMP START",
-      description:
-        "We provide quick and efficient jump-starts to get you going again.",
+      description: "Dead battery? We provide quick and efficient jump-starts.",
       image: "/jump-start.png",
     },
     {
       title: "CARS BREAKDOWN RECOVERY",
       description:
-        "Broken down? Help is on the way... Complete car recovery services.",
+        "Facing a breakdown? We offer full car recovery solutions in minutes.",
       image: "/car-breakdown.png",
     },
     {
       title: "VEHICLE ACCIDENT RECOVERY",
       description:
-        "Accident? Our team provides prompt and reliable recovery services.",
+        "Accident recovery experts ready for prompt and secure towing.",
       image: "/car-accident.png",
     },
     {
       title: "FLAT TIRE SERVICE",
       description:
-        "Flat tire? Our mobile tire service gets you back on the road quickly.",
+        "Need a tire change on the spot? Our flat tire service comes to you fast.",
       image: "/flattyre-service.png",
     },
     {
       title: "FUEL DELIVERY",
-      description:
-        "Running out of fuel? We deliver fuel directly to your location.",
+      description: "Out of fuel? Get emergency fuel delivery at your location.",
       image: "/fuel-delivery.png",
     },
     {
       title: "BASEMENT PULL OUT",
-      description:
-        "Stuck in a parking basement? We pull out your vehicle safely.",
+      description: "Stuck in a basement? We safely pull your vehicle out.",
       image: "/basement-pullout.png",
     },
     {
       title: "BATTERY REPLACEMENT",
-      description: "We replace dead or failing car batteries on the spot.",
+      description: "Car won’t start? We provide instant battery replacements.",
       image: "/battery-replacement.png",
     },
     {
       title: "SPORTS CARS RECOVERY SERVICES",
       description:
-        "We handle high-end and sports car recovery with expert care.",
+        "Handling exotic and luxury car recovery with expert care and safety.",
       image: "/sports-car-recovery.png",
     },
   ];
 
   return (
-    <div className="main px-8 py-4">
-      <h1 className="text-center md:text-5xl text-3xl mb-5">OUR SERVICES</h1>
-      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+    <section
+      className="px-6 md:px-12 py-8 bg-gray-50"
+      aria-labelledby="our-services"
+    >
+      <h1
+        id="our-services"
+        className="text-center text-3xl md:text-5xl font-bold text-gray-800 mb-10"
+      >
+        Our Services
+      </h1>
+
+      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
         {services.map((service, index) => (
           <ServiceCard key={index} {...service} />
         ))}
       </div>
 
-      {/* WhatsApp Button */}
+      {/* WhatsApp Floating Button */}
       <a
         href="https://wa.me/+971551997029"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 bg-green-500 p-2 rounded-full shadow-lg hover:bg-green-600 transition"
+        className="fixed bottom-6 right-6 z-50 bg-green-500 p-3 rounded-full shadow-lg hover:bg-green-600 transition"
+        aria-label="Chat with us on WhatsApp"
       >
         <FaWhatsapp className="text-white text-4xl md:text-5xl" />
       </a>
-    </div>
+    </section>
   );
 };
 

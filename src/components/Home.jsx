@@ -7,20 +7,56 @@ import {
   FaMoneyBillWave,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 
 function Home() {
   return (
     <div>
+      <Helmet>
+        <title>
+          Quick Shift Recovery – 24/7 Car Recovery Services in U.A.E.
+        </title>
+        <meta
+          name="description"
+          content="Fast & reliable 24/7 car recovery services in U.A.E. including towing, breakdown help, and emergency assistance. Call us now!"
+        />
+        <meta
+          name="keywords"
+          content="car recovery U.A.E., 24/7 towing service, vehicle recovery, breakdown assistance, emergency towing Dubai, Quick Shift Recovery"
+        />
+        <link rel="canonical" href="https://yourdomain.com/" />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Quick Shift Recovery",
+              "image": "https://yourdomain.com/LOGO-RN.png",
+              "url": "https://yourdomain.com",
+              "telephone": "+971551997029",
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "AE"
+              },
+              "description": "24/7 emergency car recovery and towing services across U.A.E.",
+              "priceRange": "$$",
+              "areaServed": {
+                "@type": "Country",
+                "name": "United Arab Emirates"
+              }
+            }
+          `}
+        </script>
+      </Helmet>
+
+      {/* Hero Section */}
       <div className="relative w-full md:h-screen h-[650px] overflow-hidden">
-        {/* Background Image */}
         <img
           src="/main-home-bg.png"
-          alt="Vehicle Recovery Hero"
+          alt="Emergency vehicle recovery service UAE"
           className="w-full h-full object-cover saturate-50"
         />
-
-        {/* Text Overlay */}
-        <div className="absolute inset-0 flex flex-col justify-center items-center px-6  text-white z-10 ">
+        <div className="absolute inset-0 flex flex-col justify-center items-center px-6 text-white z-10">
           <h1 className="text-sm md:text-5xl font-bold mb-4 md:mt-10">
             Fast & Reliable Vehicle Recovery Service
           </h1>
@@ -28,14 +64,14 @@ function Home() {
           <p className="text-xs md:text-xl">Breakdown Assistance and more</p>
           <a
             href="tel:+971551997029"
-            class="bg-orange-500 mt-4  hover:bg-white text-xs md:text-2xl text-white hover:text-orange-500 border-3 border-orange-500 font-bold py-2 px-2 md:py-2 ms:px-4  rounded inline-block"
+            className="bg-orange-500 mt-4 hover:bg-white text-xs md:text-2xl text-white hover:text-orange-500 border-3 border-orange-500 font-bold py-2 px-2 md:py-2 ms:px-4 rounded inline-block"
           >
             Emergency Call Now
           </a>
         </div>
       </div>
 
-      {/* WhatsApp Button */}
+      {/* WhatsApp Floating Button */}
       <a
         href="https://wa.me/+971551997029"
         target="_blank"
@@ -51,7 +87,7 @@ function Home() {
           <div>
             <img
               src="/car-towing.jpg"
-              alt="Car being towed"
+              alt="Car being towed in UAE"
               className="rounded-lg shadow-lg"
             />
           </div>
@@ -63,7 +99,6 @@ function Home() {
             <h2 className="md:text-4xl text-xl font-bold mb-8">
               Why Choose Us?
             </h2>
-
             <div className="space-y-8">
               {[
                 {
@@ -103,18 +138,17 @@ function Home() {
           <h2 className="text-3xl font-bold text-center mb-12">
             Image Gallery
           </h2>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
             {[
-              "/truck-1.jpg",
-              "/truck-2.jpg",
-              "/truck-3.jpg",
-              "/truck-4.jpg",
-              "/truck-5.jpg",
-              "/truck-6.jpg",
-              "/desert-recovery.jpg",
-              "/truck-8.jpg",
-            ].map((src, idx) => (
+              "Flatbed tow truck recovery",
+              "Roadside breakdown recovery",
+              "SUV towing in UAE",
+              "Heavy vehicle towing in desert",
+              "Emergency night towing",
+              "Truck recovery UAE",
+              "Desert vehicle assistance",
+              "City car towing service",
+            ].map((altText, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -123,8 +157,8 @@ function Home() {
                 className="w-full h-[250px] rounded-2xl overflow-hidden shadow hover:shadow-lg transition"
               >
                 <img
-                  src={src}
-                  alt={`Truck ${idx + 1}`}
+                  src={`/truck-${idx + 1}.jpg`}
+                  alt={altText}
                   className="w-full h-full object-cover"
                 />
               </motion.div>
@@ -133,7 +167,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Why Choose Quick Shift */}
+      {/* Why Choose Section */}
       <section className="bg-gray-50 py-12 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="md:text-3xl text-xl font-bold mb-4">
@@ -146,66 +180,45 @@ function Home() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-            <div className="text-center flex flex-col items-center">
-              <div className="text-orange-600 text-4xl mb-4 ">
-                <FaClock />
+            {[
+              {
+                icon: <FaClock />,
+                title: "24/7 Car Recovery Near Me",
+                desc: "We offer round-the-clock car breakdown recovery services across U.A.E..",
+              },
+              {
+                icon: <FaShieldAlt />,
+                title: "Fast & Efficient Recovery Vehicle",
+                desc: "Our fleet of advanced recovery vehicles ensures quick and safe vehicle towing.",
+              },
+              {
+                icon: <FaCarSide />,
+                title: "Professional Towing Service",
+                desc: "From compact cars to SUVs, our towing service U.A.E. handles all types of vehicles.",
+              },
+              {
+                icon: <FaMoneyBillWave />,
+                title: "Affordable & Transparent Pricing",
+                desc: "Enjoy reliable car recovery U.A.E. services without breaking the bank.",
+              },
+            ].map((item, i) => (
+              <div key={i} className="text-center flex flex-col items-center">
+                <div className="text-orange-600 text-4xl mb-4">{item.icon}</div>
+                <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                <p className="text-gray-600">{item.desc}</p>
               </div>
-              <h3 className="text-xl font-bold mb-2">
-                24/7 Car Recovery Near Me
-              </h3>
-              <p className="text-gray-600">
-                We offer round-the-clock <strong>car breakdown recovery</strong>{" "}
-                services across U.A.E..
-              </p>
-            </div>
-            <div className="text-center flex flex-col items-center">
-              <div className="text-orange-600 text-4xl mb-4">
-                <FaShieldAlt />
-              </div>
-              <h3 className="text-xl font-bold mb-2">
-                Fast & Efficient Recovery Vehicle
-              </h3>
-              <p className="text-gray-600">
-                Our fleet of advanced <strong>recovery vehicles</strong> ensures
-                quick and safe <strong>vehicle towing</strong>.
-              </p>
-            </div>
-            <div className="text-center flex flex-col items-center">
-              <div className="text-orange-600 text-4xl mb-4">
-                <FaCarSide />
-              </div>
-              <h3 className="text-xl font-bold mb-2">
-                Professional Towing Service
-              </h3>
-              <p className="text-gray-600">
-                From compact cars to SUVs, our{" "}
-                <strong>towing service U.A.E.</strong> handles all types of
-                vehicles.
-              </p>
-            </div>
-            <div className="text-center flex flex-col items-center">
-              <div className="text-orange-600 text-4xl mb-4">
-                <FaMoneyBillWave />
-              </div>
-              <h3 className="text-xl font-bold mb-2">
-                Affordable & Transparent Pricing
-              </h3>
-              <p className="text-gray-600">
-                Enjoy reliable <strong>car recovery U.A.E.</strong> services
-                without breaking the bank.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* About Our Company */}
+      {/* Company Overview */}
       <section className="bg-[#0f121b] text-white py-12 px-4">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center">
           <div>
             <img
               src="/home-sec4.jpg"
-              alt="Towing vehicle"
+              alt="Quick Shift Recovery tow vehicle"
               className="w-full rounded-lg shadow-md"
             />
           </div>
@@ -214,7 +227,6 @@ function Home() {
               ABOUT OUR COMPANY
             </p>
             <h2 className="text-4xl font-bold mb-6">What Sets Us Apart</h2>
-
             <div className="space-y-6">
               {[
                 {

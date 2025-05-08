@@ -1,160 +1,148 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-import { FaAngleRight } from "react-icons/fa";
+import {
+  FaPhoneAlt,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaAngleRight,
+} from "react-icons/fa";
 
 function Footer() {
   return (
-    <div>
-      <footer
-        className="text-gray-300 pt-12 pb-6 px-6 md:px-4"
-        style={{
-          background: "linear-gradient(to right, #6E7172, #4b4e4f)",
-        }}
-      >
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
-          {/* Brand & Description */}
-          <div>
-            <div className="text-white text-2xl font-bold flex items-center gap-2">
-              <img
-                src="/LOGO-RN.png"
-                alt="Vehicle Recovery Hero"
-                className="w-15 h-10 mr-2"
-              />
-              <span className="text-3xl whitespace-nowrap">
-                <span className="text-[#00A9E2]">Quick</span> Shift
-              </span>
+    <footer
+      className="text-gray-300 pt-12 pb-6 px-6 md:px-4"
+      style={{ background: "linear-gradient(to right, #6E7172, #4b4e4f)" }}
+      aria-label="Footer"
+    >
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+        {/* Brand & Description */}
+        <section aria-labelledby="footer-brand">
+          <div className="text-white text-2xl font-bold flex items-center gap-2">
+            <img
+              src="/LOGO-RN.png"
+              alt="Quick Shift Logo"
+              className="w-15 h-10 mr-2"
+            />
+            <span id="footer-brand" className="text-3xl whitespace-nowrap">
+              <span className="text-[#00A9E2]">Quick</span> Shift
+            </span>
+          </div>
+          <p className="mt-4">
+            Reliable 24/7 car recovery and towing services in U.A.E. Fast
+            response, professional service, and affordable rates.
+          </p>
+        </section>
+
+        {/* Quick Links */}
+        <nav aria-labelledby="quick-links">
+          <h2
+            id="quick-links"
+            className="text-xl font-semibold text-white mb-4 underline underline-offset-4 decoration-2 decoration-blue-200"
+          >
+            Quick Links
+          </h2>
+          <ul className="space-y-2 text-white">
+            {[
+              { label: "Home", to: "/" },
+              { label: "About Us", to: "/about" },
+              { label: "Services", to: "/services" },
+              { label: "Contact", to: "/contact" },
+            ].map((link, idx) => (
+              <li key={idx} className="flex items-center gap-2">
+                <FaAngleRight className="text-orange-500" />
+                <Link
+                  to={link.to}
+                  className="hover:text-orange-400 transition hover:underline"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        {/* Contact Info */}
+        <section aria-labelledby="footer-contact">
+          <h2
+            id="footer-contact"
+            className="text-xl font-semibold text-white mb-4 underline underline-offset-4 decoration-2 decoration-blue-200"
+          >
+            Contact
+          </h2>
+          <address className="not-italic space-y-2">
+            <div className="flex items-center gap-2">
+              <FaPhoneAlt className="text-orange-500" />
+              <a
+                href="tel:+971551997029"
+                className="hover:underline hover:text-orange-400"
+              >
+                +971551997029
+              </a>
             </div>
-            <p className="mt-4">
-              Reliable 24/7 car recovery and towing services in U.A.E. Fast
-              response, professional service, and affordable rates.
-            </p>
-          </div>
+            <div className="flex items-center gap-2">
+              <FaPhoneAlt className="text-orange-500" />
+              <a
+                href="tel:+971557241010"
+                className="hover:underline hover:text-orange-400"
+              >
+                +971557241010
+              </a>
+            </div>
+            <div className="flex items-center gap-2">
+              <FaEnvelope className="text-orange-500" />
+              <a
+                href="mailto:Quickshift1586@gmail.com"
+                className="hover:underline hover:text-orange-400"
+              >
+                Quickshift1586@gmail.com
+              </a>
+            </div>
+          </address>
+        </section>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-xl font-semibold text-white mb-4 underline underline-offset-4 decoration-2 decoration-blue-200">
-              Quick Links
-            </h3>
-            <ul className="space-y-2 text-white">
-              <li className="flex items-center gap-2">
-                <FaAngleRight className="text-orange-500" />
-                <Link
-                  to="/"
-                  className="hover:text-orange-400 transition hover:underline"
-                >
-                  Home
-                </Link>
-              </li>
-              <li className="flex items-center gap-2">
-                <FaAngleRight className="text-orange-500" />
-                <Link
-                  to="/about"
-                  className="hover:text-orange-400 transition hover:underline"
-                >
-                  About Us
-                </Link>
-              </li>
-              <li className="flex items-center gap-2">
-                <FaAngleRight className="text-orange-500" />
-                <Link
-                  to="/services"
-                  className="hover:text-orange-400 transition hover:underline"
-                >
-                  Services
-                </Link>
-              </li>
-              <li className="flex items-center gap-2">
-                <FaAngleRight className="text-orange-500" />
-                <Link
-                  to="/contact"
-                  className="hover:text-orange-400 transition hover:underline"
-                >
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
+        {/* Location Info */}
+        <section aria-labelledby="footer-location">
+          <h2
+            id="footer-location"
+            className="text-xl font-semibold text-white mb-4 underline underline-offset-4 decoration-2 decoration-blue-200"
+          >
+            Locations We Serve
+          </h2>
+          <ul className="space-y-2">
+            <li className="flex items-center gap-2">
+              <FaMapMarkerAlt className="text-orange-500" />
+              <span>U.A.E.</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <FaMapMarkerAlt className="text-orange-500" />
+              <span>Abu Dhabi</span>
+            </li>
+          </ul>
 
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-xl font-semibold text-white mb-4 underline underline-offset-4 decoration-2 decoration-blue-200">
-              Contact
-            </h3>
-            <ul className="space-y-2">
-              <li className="flex items-center gap-2">
-                <FaPhoneAlt className="text-orange-500" />
-                <a
-                  href="tel:+971551997029"
-                  className="hover:underline hover:text-orange-400"
-                >
-                  +971551997029
-                </a>
-              </li>
-              <li className="flex items-center gap-2">
-                <FaPhoneAlt className="text-orange-500" />
-                <a
-                  href="tel:+971557241010"
-                  className="hover:underline hover:text-orange-400"
-                >
-                  +971557241010
-                </a>
-              </li>
+          <h2 className="text-xl font-semibold text-white mt-6 mb-2 underline underline-offset-4 decoration-2 decoration-blue-200">
+            Our Office Location
+          </h2>
+          <ul className="space-y-2">
+            <li className="flex items-center gap-2">
+              <FaMapMarkerAlt className="text-orange-500" />
+              <a
+                href="https://www.google.com/maps?q=24.351222,54.4935"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline hover:text-orange-400"
+              >
+                View on Map
+              </a>
+            </li>
+          </ul>
+        </section>
+      </div>
 
-              <li className="flex items-center gap-2 hover:text-orange-400 hover:underline">
-                <FaEnvelope className="text-orange-500" />
-                <a
-                  href="mailto:Quickshift1586@gmail.com"
-                  className="hover:underline"
-                >
-                  Quickshift1586@gmail.com
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Location Info */}
-          <div>
-            <h3 className="text-xl font-semibold text-white mb-4 underline underline-offset-4 decoration-2 decoration-blue-200">
-              Locations We Serve
-            </h3>
-            <ul className="space-y-2">
-              <li className="flex items-center gap-2">
-                <FaMapMarkerAlt className="text-orange-500" />
-                <span>U.A.E.</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <FaMapMarkerAlt className="text-orange-500" />
-                <span>Abu Dhabi</span>
-              </li>
-            </ul>
-
-            <h3 className="text-xl font-semibold text-white mt-6 mb-2 underline underline-offset-4 decoration-2 decoration-blue-200">
-              Our Office Location
-            </h3>
-            <ul className="space-y-2">
-              <li className="flex items-center gap-2">
-                <FaMapMarkerAlt className="text-orange-500" />
-                <a
-                  href="https://www.google.com/maps?q=24.351222,54.4935"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:underline hover:text-orange-400"
-                >
-                  Our Location
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Bottom Footer */}
-        <div className="mt-10 border-t border-gray-700 pt-6 text-center text-sm text-gray-400">
-          © {new Date().getFullYear()} Quick Shift Recovery. All rights
-          reserved.
-        </div>
-      </footer>
-    </div>
+      {/* Bottom Footer */}
+      <div className="mt-10 border-t border-gray-700 pt-6 text-center text-sm text-gray-400">
+        © {new Date().getFullYear()} Quick Shift Recovery. All rights reserved.
+      </div>
+    </footer>
   );
 }
 
