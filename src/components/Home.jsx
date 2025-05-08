@@ -13,9 +13,7 @@ function Home() {
   return (
     <div>
       <Helmet>
-        <title>
-          Quick Shift Recovery – 24/7 Car Recovery Services in U.A.E.
-        </title>
+        <title>24/7 Car Recovery in U.A.E. | Quick Shift Recovery</title>
         <meta
           name="description"
           content="Fast & reliable 24/7 car recovery services in U.A.E. including towing, breakdown help, and emergency assistance. Call us now!"

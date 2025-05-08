@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import MobileNavbar from "./MobileNavbar";
+import { Helmet } from "react-helmet";
 
 function Navbar() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -11,6 +12,45 @@ function Navbar() {
 
   return (
     <>
+      {/* SEO and Meta Tags for Navbar */}
+      <Helmet>
+        <title>Quick Shift Recovery – Roadside Assistance Services</title>
+        <meta
+          name="description"
+          content="Quick Shift Recovery offers 24/7 roadside assistance services like towing, jump-starts, tire changes, and more. Get help whenever you need it."
+        />
+        <meta
+          name="keywords"
+          content="roadside assistance, towing service, tire change, jump-start, car recovery, UAE"
+        />
+        <meta name="robots" content="index, follow" />
+
+        {/* Open Graph Meta Tags */}
+        <meta
+          property="og:title"
+          content="Quick Shift Recovery – Roadside Assistance Services"
+        />
+        <meta
+          property="og:description"
+          content="Quick Shift Recovery offers 24/7 roadside assistance services like towing, jump-starts, tire changes, and more. Get help whenever you need it."
+        />
+        <meta property="og:image" content="/hero-image.jpg" />
+        <meta property="og:url" content="https://yourdomain.com" />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Quick Shift Recovery – Roadside Assistance Services"
+        />
+        <meta
+          name="twitter:description"
+          content="Quick Shift Recovery offers 24/7 roadside assistance services like towing, jump-starts, tire changes, and more. Get help whenever you need it."
+        />
+        <meta name="twitter:image" content="/hero-image.jpg" />
+      </Helmet>
+
       {/* Desktop Header (visible on md and above) */}
       <nav className="hidden md:flex bg-[#6E7172] px-4 py-2 justify-between items-center sticky top-0 z-50">
         <div className="flex items-center text-white text-2xl font-bold">

@@ -12,14 +12,14 @@ function Contact() {
   return (
     <div>
       <Helmet>
-        <title>Contact Quick Shift Recovery – 24/7 Car Towing U.A.E.</title>
+        <title>Contact Quick Shift Recovery | 24/7 Towing in U.A.E.</title>
         <meta
           name="description"
-          content="Get in touch with Quick Shift Recovery for 24/7 emergency car towing and breakdown recovery services across the U.A.E. Call, email or WhatsApp us anytime!"
+          content="Reach out to Quick Shift Recovery for 24/7 car towing, emergency roadside assistance, and fast recovery services anywhere in the U.A.E."
         />
         <meta
           name="keywords"
-          content="Contact Quick Shift Recovery, car towing UAE, 24/7 recovery services, emergency roadside help"
+          content="contact car recovery UAE, Quick Shift Recovery contact, 24/7 towing service, roadside help UAE"
         />
         <link rel="canonical" href="https://yourdomain.com/contact" />
         <script type="application/ld+json">

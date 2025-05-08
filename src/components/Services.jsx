@@ -1,6 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import { FaWhatsapp } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const ServiceCard = ({ title, description, image }) => {
   return (
@@ -85,34 +86,130 @@ const ServiceCards = () => {
   ];
 
   return (
-    <section
-      className="px-6 md:px-12 py-8 bg-gray-50"
-      aria-labelledby="our-services"
-    >
-      <h1
-        id="our-services"
-        className="text-center text-3xl md:text-5xl font-bold text-gray-800 mb-10"
-      >
-        Our Services
-      </h1>
+    <div>
+      <Helmet>
+        <title>Our Services – Quick Shift Recovery</title>
+        <meta
+          name="description"
+          content="Explore the wide range of services provided by Quick Shift Recovery. From towing to tire service, we're ready to assist you 24/7."
+        />
+        <meta
+          name="keywords"
+          content="24/7 towing, jump-start service, vehicle breakdown recovery, flat tire assistance, emergency fuel delivery, battery replacement"
+        />
+        <link rel="canonical" href="https://yourdomain.com/services" />
 
-      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-        {services.map((service, index) => (
-          <ServiceCard key={index} {...service} />
-        ))}
-      </div>
+        {/* Open Graph Meta Tags */}
+        <meta
+          property="og:title"
+          content="Our Services – Quick Shift Recovery"
+        />
+        <meta
+          property="og:description"
+          content="Explore Quick Shift Recovery's comprehensive services for roadside assistance, including towing, tire change, jump-start, and more."
+        />
+        <meta property="og:url" content="https://yourdomain.com/services" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Quick Shift Recovery" />
+        <meta
+          property="og:image"
+          content="https://yourdomain.com/service-preview.jpg"
+        />
+        <meta property="og:locale" content="en_AE" />
 
-      {/* WhatsApp Floating Button */}
-      <a
-        href="https://wa.me/+971551997029"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 bg-green-500 p-3 rounded-full shadow-lg hover:bg-green-600 transition"
-        aria-label="Chat with us on WhatsApp"
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Our Services – Quick Shift Recovery"
+        />
+        <meta
+          name="twitter:description"
+          content="Quick Shift Recovery offers 24/7 vehicle recovery services in the U.A.E. From towing to tire change, we're here to help!"
+        />
+        <meta
+          name="twitter:image"
+          content="https://yourdomain.com/service-preview.jpg"
+        />
+        <meta name="twitter:site" content="@QuickShiftUAE" />
+
+        {/* Additional SEO Tags */}
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Quick Shift Recovery" />
+        <meta name="geo.region" content="AE" />
+        <meta name="geo.placename" content="U.A.E." />
+        <meta name="geo.position" content="24.3512;54.4935" />
+        <meta name="ICBM" content="24.3512, 54.4935" />
+        <meta name="rating" content="General" />
+        <meta name="distribution" content="global" />
+        <meta name="theme-color" content="#ff6600" />
+        <meta name="copyright" content="Quick Shift Recovery © 2025" />
+        <meta name="language" content="English" />
+
+        {/* Structured Data (JSON-LD) */}
+        <script type="application/ld+json">
+          {`
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Towing & Roadside Assistance",
+            "provider": {
+              "@type": "Organization",
+              "name": "Quick Shift Recovery",
+              "url": "https://yourdomain.com/services",
+              "logo": "https://yourdomain.com/logo.png",
+              "description": "Quick Shift Recovery offers 24/7 emergency towing, tire changes, jump-starts, and more.",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+971551997029",
+                "contactType": "Customer Service",
+                "areaServed": "AE",
+                "availableLanguage": ["English", "Arabic", "Urdu"]
+              }
+            },
+            "offers": [
+              {
+                "@type": "Offer",
+                "priceCurrency": "AED",
+                "eligibleRegion": "UAE",
+                "price": "Varies"
+              }
+            ]
+          }
+          `}
+        </script>
+      </Helmet>
+
+      {/* The rest of your ServiceCards content remains unchanged */}
+      <section
+        className="px-6 md:px-12 py-8 bg-gray-50"
+        aria-labelledby="our-services"
       >
-        <FaWhatsapp className="text-white text-4xl md:text-5xl" />
-      </a>
-    </section>
+        <h1
+          id="our-services"
+          className="text-center text-3xl md:text-5xl font-bold text-gray-800 mb-10"
+        >
+          Our Services
+        </h1>
+
+        <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((service, index) => (
+            <ServiceCard key={index} {...service} />
+          ))}
+        </div>
+
+        {/* WhatsApp Floating Button */}
+        <a
+          href="https://wa.me/+971551997029"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed bottom-6 right-6 z-50 bg-green-500 p-3 rounded-full shadow-lg hover:bg-green-600 transition"
+          aria-label="Chat with us on WhatsApp"
+        >
+          <FaWhatsapp className="text-white text-4xl md:text-5xl" />
+        </a>
+      </section>
+    </div>
   );
 };
 
