@@ -1,0 +1,11 @@
+# robots.txt for Quick Shift Recovery (React website)
+
+User-agent: *
+Allow: /
+
+# Prevent crawling of specific directories (if any)
+Disallow: /private/
+Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://yourdomain.com/sitemap.xml
